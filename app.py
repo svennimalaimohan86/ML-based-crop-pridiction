@@ -42,12 +42,15 @@ if st.button("Predict"):
     result = encoder.inverse_transform(pred)[0]
 
     # 🎯 Output
-    st.success(f"🌱 Predicted Risk: {result}")
+    #st.success(f"🌱 Predicted Risk: {result}")
 
     # 💡 Suggestion
     if result == "High Risk":
+        st.error(f"🌱 Predicted Risk: {result}")
         st.warning("⚠️ Use strong pesticide + increase irrigation")
     elif result == "Medium Risk":
+        st.warning(f"🌱 Predicted Risk: {result}")
         st.info("⚡ Monitor crop and use moderate pesticide")
     else:
+        st.success(f"🌱 Predicted Risk: {result}")
         st.success("✅ Crop is healthy, no action needed")
